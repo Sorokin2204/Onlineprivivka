@@ -32,5 +32,9 @@
         "last 1 version",
         "> 1%",
         "IE 10"
-    ]
+    ],
+    "dependencies": {
+        "gulp-concat": "^2.6.1",
+        "jquery": "^3.5.1"
+    }
 }

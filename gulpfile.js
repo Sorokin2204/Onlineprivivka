@@ -18,7 +18,8 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const inject = require('gulp-inject');
 const browserSync = require('browser-sync').create();
-
+const $ = require('jquery');
+const concat = require('gulp-concat');
 /* Paths */
 const srcPath = 'src/';
 const distPath = 'dist/';
@@ -160,40 +161,45 @@ function cssWatch(cb) {
 }
 
 function js(cb) {
-  return src(path.src.js, { base: srcPath + 'assets/js/' })
-    .pipe(
-      plumber({
-        errorHandler: function (err) {
-          notify.onError({
-            title: 'JS Error',
-            message: 'Error: <%= error.message %>',
-          })(err);
-          this.emit('end');
-        },
-      }),
-    )
-    .pipe(
-      webpackStream({
-        mode: 'production',
-        output: {
-          filename: 'app.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.(js)$/,
-              exclude: /(node_modules)/,
-              loader: 'babel-loader',
-              query: {
-                presets: ['@babel/preset-env'],
-              },
-            },
-          ],
-        },
-      }),
-    )
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.reload({ stream: true }));
+  return (
+    src(['node_modules/jquery/dist/jquery.min.js', path.src.js], {
+      base: srcPath + 'assets/js/',
+    })
+      .pipe(
+        plumber({
+          errorHandler: function (err) {
+            notify.onError({
+              title: 'JS Error',
+              message: 'Error: <%= error.message %>',
+            })(err);
+            this.emit('end');
+          },
+        }),
+      )
+      // .pipe(
+      //   webpackStream({
+      //     mode: 'production',
+      //     output: {
+      //       filename: 'app.js',
+      //     },
+      //     module: {
+      //       rules: [
+      //         {
+      //           test: /\.(js)$/,
+      //           exclude: /(node_modules)/,
+      //           loader: 'babel-loader',
+      //           query: {
+      //             presets: ['@babel/preset-env'],
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   }),
+      // )
+      .pipe(concat('app.js'))
+      .pipe(dest(path.build.js))
+      .pipe(browserSync.reload({ stream: true }))
+  );
 
   cb();
 }
@@ -269,9 +275,10 @@ const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 /* Exports Tasks */
+
+exports.html = html;
 exports.css = css;
 exports.js = js;
-exports.html = html;
 exports.images = images;
 exports.fonts = fonts;
 exports.clean = clean;
