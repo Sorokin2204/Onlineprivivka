@@ -2,12 +2,11 @@
 @import 'vendor/reset';
 @import 'fonts';
 @import 'global';
-
-body {
-  //background: url(../img/bg.png) 0 0 / 100% auto no-repeat;
-}
+@import 'media';
 
 .header {
+  overflow-x: hidden;
+  position: relative;
   background-color: $white;
   background: url(../img/header-bg.png) 0 0 / 100% auto no-repeat;
   &__top {
@@ -17,7 +16,7 @@ body {
   &__top-inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
 
   &__contact {
@@ -28,6 +27,9 @@ body {
     display: flex;
     align-items: center;
     svg {
+      path {
+        fill: $red;
+      }
       display: block;
       margin-right: 7px;
     }
@@ -67,10 +69,12 @@ body {
   }
 
   &__search {
+    margin-top: 20px;
     margin-right: -31px;
   }
 
   &__cart {
+    margin-top: 5px;
     margin-right: -38px;
     display: flex;
     position: relative;
@@ -96,26 +100,8 @@ body {
   }
 
   &__lang {
-    margin-top: 8px;
+    margin-top: 2px;
     align-self: flex-start;
-    border-radius: 5px;
-    display: flex;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    background: #ffffff;
-  }
-
-  &__lang-item {
-    padding: 4px 6px 3px 6px;
-
-    border-radius: 5px;
-
-    &--active {
-      background-color: $dark;
-      color: $white;
-    }
   }
 
   &__bottom {
@@ -123,7 +109,7 @@ body {
 
   &__bottom-inner {
     padding-top: 95px;
-    padding-bottom: 132px;
+    padding-bottom: 287px;
   }
 
   &__bottom-icon {
@@ -148,7 +134,7 @@ body {
   }
 
   &__text {
-    width: 412px;
+    width: 413px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
@@ -176,17 +162,22 @@ body {
 
   &__btn {
     // text-align: center;
-    margin-bottom: 20px;
+    //margin-bottom: 20px;
+
     // font-family: Montserrat;
     // font-style: normal;
     // font-weight: bold;
     // font-size: 18px;
-    line-height: 140%;
+    // line-height: 140%;
     // background: linear-gradient(90deg, #fa6873 0%, #cb454f 100%);
     // box-shadow: 0px 10px 25px rgba(232, 97, 107, 0.35);
-    border-radius: 20px;
+    // border-radius: 20px;
     //color: $white;
     //padding: 15px 40px;
+
+    & + & {
+      margin-left: 20px;
+    }
   }
 }
 
@@ -221,6 +212,7 @@ body {
   padding-top: 237px;
   border-top: 1px solid #e2e2e2;
   background: url(../img/main-bg.png) 0 0 / 100% auto no-repeat;
+
   &__inner {
   }
 }
@@ -240,7 +232,7 @@ body {
     align-items: center;
     position: absolute;
     top: -300px;
-    left: 0px;
+    left: 10px;
     z-index: 2;
     outline: 12px solid $white;
   }
@@ -260,7 +252,6 @@ body {
     height: 319px;
     width: 100%;
     margin-bottom: 40px;
-    width: 1213px;
   }
 
   &__item {
@@ -366,14 +357,17 @@ body {
 .about {
   &__inner {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 200px;
   }
 
   &__img {
+    max-width: 100%;
+    height: auto;
   }
 
   &__info {
+    margin-left: 100px;
   }
 
   &__title {
@@ -569,10 +563,15 @@ body {
   }
 
   &__item {
+    // width: 284px !important;
     padding: 30px 20px;
     background: #faf9fe;
     border: 1px solid #e2e2e2;
     border-radius: 20px;
+    transition: all 0.3s;
+    &:hover {
+      box-shadow: 0px 15px 35px #f2f0f8;
+    }
   }
 
   &__img {
@@ -592,6 +591,7 @@ body {
   }
 
   &__text {
+    line-height: 140%;
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
@@ -629,26 +629,34 @@ body {
 }
 
 .footer {
-  padding-top: 80px;
-  padding-bottom: 33px;
+  overflow-x: hidden;
+
   &__inner {
     display: flex;
     justify-content: flex-end;
-    // position: relative;
-    // &::after {
-    //   top: -317px;
-    //   right: 0px;
-    //   display: block;
-    //   content: '';
-    //   position: absolute;
-    //   background-color: $red;
-    //   width: 82px;
-    //   height: 439px;
-    //   border-radius: 100% 0 0 100%/100% 0 0 100%;
-    // }
+    position: relative;
+    &::after {
+      top: -417px;
+      right: -585px;
+      display: block;
+      content: '';
+      position: absolute;
+      background-color: $red;
+      width: 667px;
+      height: 677px;
+      border-radius: 100%;
+    }
+  }
+
+  &__content {
+    padding-top: 80px;
+    z-index: -2;
+    position: relative;
+    background-color: $light;
   }
 
   &_contact-us-title {
+    text-align: center;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 800;
@@ -661,6 +669,8 @@ body {
   }
 
   &__info {
+    padding-top: 33px;
+    padding-bottom: 33px;
   }
 
   &__logo {
@@ -678,6 +688,7 @@ body {
 
   &__list {
     margin-bottom: 20px;
+    width: 246px;
   }
 
   &__item {
@@ -691,13 +702,14 @@ body {
       margin-bottom: 5px;
     }
     a {
+      display: flex;
+      align-items: center;
       font-family: Montserrat;
       font-style: normal;
       font-weight: 600;
       font-size: 15px;
       svg {
-        vertical-align: middle;
-        display: inline-block;
+        display: block;
         margin-right: 7px;
       }
     }
@@ -709,7 +721,7 @@ body {
     font-weight: normal;
     font-size: 15px;
     line-height: 120%;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     color: #767c80;
   }
 
@@ -718,9 +730,11 @@ body {
   }
 
   &__contact-us {
+    // z-index: 1;
+    width: 412px;
     position: relative;
     margin-right: 73px;
-    margin-left: 150px;
+    margin-left: 9%;
     background-color: $white;
     border: 1px solid #e2e2e2;
     box-shadow: 0px 0px 50px rgba(104, 104, 104, 0.3);
@@ -753,7 +767,7 @@ body {
       }
     }
 
-    &::before {
+    &-circle {
       position: absolute;
       content: '';
       display: block;
@@ -771,6 +785,7 @@ body {
   }
 
   &__info {
+    background-color: $white;
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;

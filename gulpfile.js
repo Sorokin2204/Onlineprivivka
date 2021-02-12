@@ -60,6 +60,8 @@ function serve() {
     server: {
       baseDir: './' + distPath,
     },
+
+    port: 9222,
     notify: false,
   });
 }
