@@ -2,7 +2,7 @@
   <div class="header__top">
     <div class="container">
       <div class="header__top-inner">
-        <img class="logo" src="../assets/img/logo.svg" alt="" />
+        <img class="header__logo logo" src="../assets/img/logo.svg" alt="" />
 
         <div class="header__tel-box">
           <a href="tel:+7 727 338 52–87" class="header__tel header__contact"
@@ -105,7 +105,6 @@
             >
               <path
                 d="M37.7559 11.4373H33.714L28.0881 0.810853C27.7845 0.237483 27.0738 0.0187395 26.5002 0.322302C25.9268 0.625864 25.708 1.33684 26.0116 1.91021L31.0556 11.4373H8.93763L13.9816 1.91021C14.2851 1.33684 14.0664 0.625864 13.493 0.322302C12.9198 0.0188178 12.2087 0.237483 11.9051 0.810853L6.27911 11.4373H2.24406C1.00671 11.4373 0 12.444 0 13.6814V16.2911C0 17.4763 0.923845 18.4493 2.0893 18.5292L6.03045 34.9147C6.1574 35.4427 6.62966 35.8148 7.17264 35.8148H32.8196C33.3624 35.8148 33.8345 35.4429 33.9616 34.9153L37.912 18.529C39.0769 18.4485 40 17.4759 40 16.2911V13.6814C40 12.444 38.9934 11.4373 37.7559 11.4373ZM2.34956 13.7869H37.6504V16.1855H2.34956V13.7869ZM33.9782 24.8216H28.8347L29.6196 18.535H35.4937L33.9782 24.8216ZM21.1764 33.4652V27.1711H26.1735L25.3876 33.4652H21.1764ZM14.6153 33.4652L13.8288 27.1711H18.8268V33.4652H14.6153ZM4.50731 18.535H10.3818L11.1674 24.8216H6.0194L4.50731 18.535ZM12.7495 18.535H18.8268V24.8216H13.5352L12.7495 18.535ZM21.1764 24.8216V18.535H27.2518L26.4669 24.8216H21.1764ZM6.58447 27.1711H11.461L12.2475 33.4652H8.09837L6.58447 27.1711ZM31.8943 33.4652H27.7554L28.5413 27.1711H33.4117L31.8943 33.4652Z"
-                fill="white"
               />
             </svg>
           </div>
@@ -116,7 +115,7 @@
           <div class="lang__item">KZ</div>
         </div>
 
-        <button class="menu"><img src="assets/img/menu.svg" alt="" /></button>
+        <button class="menu"></button>
       </div>
     </div>
   </div>
@@ -204,7 +203,7 @@
             <a href="#" class="header__btn btn btn--fill btn--lg"
               >Заказать услугу</a
             >
-            <a href="#" class="header__btn btn btn--dark btn--lg">Все услуги</a>
+            <a href="#" class="header__btn btn btn--lg">Все услуги</a>
           </div>
 
           <!-- <div class="header__btn-box">
@@ -251,73 +250,81 @@
   <div class="main__inner">
     <div class="services">
       <div class="container">
-        <div class="services__inner">
+        <div class="services__top">
           <a href="#" class="services__btn-inst">Instagram</a>
           <p class="subtitle">Услуги</p>
           <h2 class="title">Уничтожение насекомых, грызунов и бактерий</h2>
-          <ul class="services__menu">
-            <li class="services__item">
-              <img
-                src="../assets/img/srv-01.svg"
-                alt=""
-                class="services__img"
-              />
+        </div>
+      </div>
+      <div class="services__bottom">
+        <div class="services__slider-nav">
+          <div class="services__slider-nav-left btn-arrow btn-arrow--left">
+            <img src="../assets/img/chevron_left.svg" alt="" />
+          </div>
+          <div class="services__slider-nav-right btn-arrow btn-arrow--right">
+            <img src="../assets/img/chevron_right.svg" alt="" />
+          </div>
+        </div>
+        <ul class="services__menu">
+          <li class="services__item">
+            <img src="../assets/img/srv-01.svg" alt="" class="services__img" />
+            <div class="services__content">
               <div class="services__title">
                 Уничтожение насекомых грызунов и бактерий
               </div>
               <div class="services__text">
                 Консультация с широким активом, в своём классическом
-                представлении, допускает внедрение форм воздействия
+                представлении, допускает внедрение форм воздействия Консультация
+                с широким активом, в своём классическом представлении, допускает
+                внедрение форм воздействия
               </div>
-              <a href="#" class="services__detail"
-                ><svg
-                  width="8"
-                  height="14"
-                  viewBox="0 0 8 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.71296 7.00023L1.70196 0.990234L0.287964 2.40423L4.88796 7.00423L0.287964 11.5972L1.70196 13.0112L7.71296 7.00023Z"
-                    fill="white"
-                  />
-                </svg>
-              </a>
-            </li>
+            </div>
+            <a href="#" class="services__detail"
+              ><svg
+                width="8"
+                height="14"
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.71296 7.00023L1.70196 0.990234L0.287964 2.40423L4.88796 7.00423L0.287964 11.5972L1.70196 13.0112L7.71296 7.00023Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </li>
 
-            <li class="services__item">
-              <img
-                src="../assets/img/srv-02.svg"
-                alt=""
-                class="services__img"
-              />
+          <li class="services__item">
+            <img src="../assets/img/srv-02.svg" alt="" class="services__img" />
+            <div class="services__content">
               <div class="services__title">Уборка квартир, офисов и тд</div>
               <div class="services__text">
                 Консультация с широким активом, в своём классическом
-                представлении, допускает внедрение форм воздействия
+                представлении, допускает внедрение форм воздействия Консультация
+                с широким активом, в своём классическом представлении, допускает
+                внедрение форм воздействия
               </div>
-              <a href="#" class="services__detail"
-                ><svg
-                  width="8"
-                  height="14"
-                  viewBox="0 0 8 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.71296 7.00023L1.70196 0.990234L0.287964 2.40423L4.88796 7.00423L0.287964 11.5972L1.70196 13.0112L7.71296 7.00023Z"
-                    fill="white"
-                  />
-                </svg>
-              </a>
-            </li>
+            </div>
+            <a href="#" class="services__detail"
+              ><svg
+                width="8"
+                height="14"
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.71296 7.00023L1.70196 0.990234L0.287964 2.40423L4.88796 7.00423L0.287964 11.5972L1.70196 13.0112L7.71296 7.00023Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </li>
 
-            <li class="services__item">
-              <img
-                src="../assets/img/srv-03.svg"
-                alt=""
-                class="services__img"
-              />
+          <li class="services__item">
+            <img src="../assets/img/srv-03.svg" alt="" class="services__img" />
+            <div class="services__content">
               <div class="services__title">
                 Продажа средств против насекомых, грызунов и бактерий
               </div>
@@ -325,54 +332,52 @@
                 Консультация с широким активом, в своём классическом
                 представлении, допускает внедрение форм воздействия
               </div>
-              <a href="#" class="services__detail"
-                ><svg
-                  width="8"
-                  height="14"
-                  viewBox="0 0 8 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.71296 7.00023L1.70196 0.990234L0.287964 2.40423L4.88796 7.00423L0.287964 11.5972L1.70196 13.0112L7.71296 7.00023Z"
-                    fill="white"
-                  />
-                </svg>
-              </a>
-            </li>
+            </div>
+            <a href="#" class="services__detail"
+              ><svg
+                width="8"
+                height="14"
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.71296 7.00023L1.70196 0.990234L0.287964 2.40423L4.88796 7.00423L0.287964 11.5972L1.70196 13.0112L7.71296 7.00023Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </li>
 
-            <li class="services__item">
-              <img
-                src="../assets/img/srv-04.svg"
-                alt=""
-                class="services__img"
-              />
+          <li class="services__item">
+            <img src="../assets/img/srv-04.svg" alt="" class="services__img" />
+            <div class="services__content">
               <div class="services__title">
                 Продажа профессиональной моющей химии, тряпок, швабр и прочего
               </div>
               <div class="services__text">
                 Консультация с широким активом, в своём классическом
               </div>
-              <a href="#" class="services__detail"
-                ><svg
-                  width="8"
-                  height="14"
-                  viewBox="0 0 8 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.71296 7.00023L1.70196 0.990234L0.287964 2.40423L4.88796 7.00423L0.287964 11.5972L1.70196 13.0112L7.71296 7.00023Z"
-                    fill="white"
-                  />
-                </svg>
-              </a>
-            </li>
-          </ul>
-          <a href="#" class="services__btn-all btn btn--icon btn--lg"
-            >Все услуги
-          </a>
-        </div>
+            </div>
+            <a href="#" class="services__detail"
+              ><svg
+                width="8"
+                height="14"
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.71296 7.00023L1.70196 0.990234L0.287964 2.40423L4.88796 7.00423L0.287964 11.5972L1.70196 13.0112L7.71296 7.00023Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="services__btn-all btn btn--icon btn--lg"
+          >Все услуги
+        </a>
       </div>
     </div>
 
@@ -390,7 +395,10 @@
             sizes="(max-width: 320px) 280px,
             (max-width: 480px) 380px,
             (max-width: 768px) 380px,
-            (max-width: 1270px) 470px,618px
+             (max-width: 930px) 380px,
+              (max-width: 1100px) 470px,
+             
+              618px
             "
             alt=""
             class="about__img"
@@ -510,7 +518,7 @@
                 с учётом комплекса экономической целесообразности принимаемых
                 решений. Являясь всего лишь частью общей картины, действия
                 представителей оппозиции представлены в исключительно
-                положительном свете… Читать полностью
+                положительном свете…
               </p>
             </li>
             <li class="feedback__item">
@@ -531,7 +539,7 @@
                 с учётом комплекса экономической целесообразности принимаемых
                 решений. Являясь всего лишь частью общей картины, действия
                 представителей оппозиции представлены в исключительно
-                положительном свете… Читать полностью
+                положительном свете…
               </p>
             </li>
           </ul>

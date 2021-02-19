@@ -164,9 +164,16 @@ function cssWatch(cb) {
 
 function js(cb) {
   return (
-    src(['node_modules/jquery/dist/jquery.min.js', path.src.js], {
-      base: srcPath + 'assets/js/',
-    })
+    src(
+      [
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/dotdotdot-js/dist/dotdotdot.js',
+        path.src.js,
+      ],
+      {
+        base: srcPath + 'assets/js/',
+      },
+    )
       .pipe(
         plumber({
           errorHandler: function (err) {
@@ -234,19 +241,21 @@ function jsWatch(cb) {
 }
 
 function images(cb) {
-  return src(path.src.images)
-    .pipe(
-      imagemin([
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 95, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-        }),
-      ]),
-    )
-    .pipe(dest(path.build.images))
-    .pipe(browserSync.reload({ stream: true }));
+  return (
+    src(path.src.images)
+      // .pipe(
+      //   imagemin([
+      //     imagemin.gifsicle({ interlaced: true }),
+      //     imagemin.mozjpeg({ quality: 95, progressive: true }),
+      //     imagemin.optipng({ optimizationLevel: 5 }),
+      //     imagemin.svgo({
+      //       plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+      //     }),
+      //   ]),
+      // )
+      .pipe(dest(path.build.images))
+      .pipe(browserSync.reload({ stream: true }))
+  );
 
   cb();
 }
@@ -268,7 +277,7 @@ function clean(cb) {
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], cssWatch);
-  gulp.watch([path.watch.js], jsWatch);
+  gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.images], images);
   gulp.watch([path.watch.fonts], fonts);
 }
